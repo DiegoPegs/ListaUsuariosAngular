@@ -1,0 +1,134 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success" [disabled]="!f.valid">
+            Salvar
+          </button>
+          |
+          <button type="button" class="btn btn-danger" (click)="onCancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            name="nome"
+            [ngModel]="editedItem.nome"
+            required
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              [ngModel]="editedItem.email"
+              name="email"
+              required
+              email
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="cpf">CPF (Somente números)</label>
+            <input
+              class="form-control"
+              type="text"
+              id="cpf"
+              name="cpf"
+              [ngModel]="editedItem.cpf"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <P class="endereco">Endereço</P>
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="form-group">
+            <label for="cep">CEP</label>
+            <input
+              class="form-control"
+              type="text"
+              id="cep"
+              name="cep"
+              [ngModel]="editedItem.cep"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="form-group">
+            <label for="tipoEnd">Tipo de Endereço</label>
+            <input
+              class="form-control"
+              type="text"
+              id="tipoEnd"
+              name="tipoEnd"
+              [ngModel]="editedItem.tipoEnd"
+              required
+              placeholder="Ex: Rua ou Avenida"
+            />
+          </div>
+        </div>
+        <div class="col-xs-9">
+          <div class="form-group">
+            <label for="logradouro">Endereço</label>
+            <input
+              class="form-control"
+              type="text"
+              id="logradouro"
+              name="logradouro"
+              [ngModel]="editedItem.logradouro"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-10">
+          <div class="form-group">
+            <label for="complemento">Complemento</label>
+            <input
+              class="form-control"
+              type="text"
+              id="complemento"
+              name="complemento"
+              [ngModel]="editedItem.complemento"
+            />
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <div class="form-group">
+            <label for="numero">Número</label>
+            <input
+              class="form-control"
+              type="number"
+              id="numero"
+              name="numero"
+              [ngModel]="editedItem.numero"
+              required
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

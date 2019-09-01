@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewUser()">
+      Novo Usuário
+    </button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-xs-12">
+    <input
+      class="form-control"
+      type="text"
+      [(ngModel)]="filterName"
+      placeholder="Filtro"
+    />
+  </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+  <div class="col-xs-12">
+    <button class="btn btn-primary" (click)="onDirection(0)">Crescente</button>
+    |
+    <button class="btn btn-primary" (click)="onDirection(1)">
+      Decrescente
+    </button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-xs-12">
+    <app-user-item
+      *ngFor="
+        let userEl of usuarios | filter: filterName | sort: direction;
+        let i = index
+      "
+      [usuario]="userEl"
+      [index]="i"
+    ></app-user-item>
+  </div>
+</div>

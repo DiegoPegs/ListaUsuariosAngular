@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{ usuario.nome }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="btn-group" appDropdown>
+        <button type="button" class="btn btn-primary dropdown-toggle">
+          Ações <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a style="cursor: pointer" (click)="onEditUser()">Editar Usuário</a>
+          </li>
+          <li>
+            <a style="cursor: pointer" (click)="onDeleteUser()"
+              >Delete usuário</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <b>E-mail: </b>
+      <p>{{ usuario.email }}</p>
+      <b>CPF: </b>
+      <p>{{ usuario.cpf }}</p>
+    </div>
+  </div>
+  <hr />
+  <h3>Endereço</h3>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>
+        {{ usuario.tipoEnd }} {{ usuario.logradouro }}, {{ usuario.numero }}
+      </p>
+    </div>
+    <div class="col-xs-12">
+      <p>{{ usuario.complemento }} - {{ usuario.cep }}</p>
+    </div>
+  </div>
+</div>
